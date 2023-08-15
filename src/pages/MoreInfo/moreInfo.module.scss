@@ -1,0 +1,29 @@
+.logo {
+  text-align: center;
+
+  img {
+    max-height: 70px;
+    padding-top: 25px;
+    padding-bottom: 35px;
+  }
+}
+
+.block {
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+  height: 50%;
+  background: #1b774b;
+  border: 1px solid #66bb6a;
+  border-radius: 20px;
+  padding: 40px;
+  margin: 9.5em auto;
+  img {
+    width: 40%;
+    border-radius: 15px;
+  }
+  .info {
+    color: #fafafa;
+    padding-left: 30px;
+  }
+}
