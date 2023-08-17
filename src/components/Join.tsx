@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Join = () => {
+const Join: React.FC = () => {
   return (
     <div className="join-block">
       <div className="join-block__text">

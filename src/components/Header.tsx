@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <header>
-      <div class="block">
+      <div className="block">
         <Link to="/">
-          <div class="block__logo">
+          <div className="block__logo">
             <img src="./assets/home.png" alt="home" />
           </div>
         </Link>

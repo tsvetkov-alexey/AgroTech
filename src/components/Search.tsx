@@ -1,26 +1,28 @@
-import React, { useCallback, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useCallback, useRef, useState } from 'react';
 import { setSearch } from '../redux/slices/filter';
 import debounce from 'lodash.debounce';
+import { useAppDispatch } from '../redux/store';
 
 const Search = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const [value, setValue] = useState('');
   const updateSearchValue = useCallback(
-    debounce((str) => {
+    debounce((str: string) => {
       dispatch(setSearch(str));
     }, 250),
     [],
   );
 
-  const onChangeInput = (e) => {
+  const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
     updateSearchValue(e.target.value);
   };
   return (
-    <div class="startup-block__search">
+    <div className="startup-block__search">
       <input
+        ref={inputRef}
         type="text"
         placeholder="Название стартапа..."
         value={value}

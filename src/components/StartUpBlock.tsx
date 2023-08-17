@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Startups } from '../redux/slices/startup';
 
-const StartUpBlock = ({ id, title, createdAt, imageUrl }) => {
+const StartUpBlock: React.FC<Startups> = ({ id, title, createdAt, imageUrl }) => {
   return (
     <Link to={`/${id}`}>
       <div className="block-item">

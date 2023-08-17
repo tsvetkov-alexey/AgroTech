@@ -5,16 +5,16 @@ import st from './moreInfo.module.scss';
 import { useParams } from 'react-router-dom';
 import axios from '../../axios';
 import { Loader } from '../../components/UI/Loader';
+import { Startups } from '../../redux/slices/startup';
 
-const MoreInfo = () => {
+const MoreInfo: React.FC = () => {
   const { id } = useParams();
-  const [info, setInfo] = useState(null);
+  const [info, setInfo] = useState<Startups>();
 
   const fetchStartUpId = async () => {
     try {
-      const response = await axios.get(`startups/${id}`);
-      setInfo(response.data);
-      console.log(response.data);
+      const { data } = await axios.get(`startups/${id}`);
+      setInfo(data);
     } catch (error) {
       console.log('ERROR', error);
     }

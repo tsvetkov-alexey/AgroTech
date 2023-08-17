@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import MoreInfo from './pages/MoreInfo';
 import Register from './pages/Register';
 
-const App = () => {
+function App() {
   return (
     <>
       <Header />
@@ -18,6 +18,6 @@ const App = () => {
       <Footer />
     </>
   );
-};
+}
 
 export default App;

@@ -3,17 +3,19 @@ import Join from '../../components/Join';
 import Search from '../../components/Search';
 import StartUpBlock from '../../components/StartUpBlock';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { RootState, useAppDispatch } from '../../redux/store';
 import { fetchStartups } from '../../redux/slices/startup';
+
 import { Skeleton } from '../../components/Skeleton';
 
 import st from './home.module.scss';
 
-const Home = () => {
-  const dispatch = useDispatch();
+const Home: React.FC = () => {
+  const dispatch = useAppDispatch();
 
-  const { startups, status } = useSelector((state) => state.startup);
-  const { search } = useSelector((state) => state.filter);
+  const { startups, status } = useSelector((state: RootState) => state.startup);
+  const { search } = useSelector((state: RootState) => state.filter);
   console.log(startups, status);
 
   const allStartups = () => {

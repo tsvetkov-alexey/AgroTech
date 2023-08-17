@@ -1,7 +1,7 @@
 import React from 'react';
 import st from './loader.module.scss';
 
-export const Loader = () => {
+export const Loader: React.FC = () => {
   return (
     <div className={st.loaderContainer}>
       <div className={st.loader}></div>
